@@ -4,22 +4,41 @@
 
 using namespace std;
 // prototyping  functions
+int player_name();
+int meet_mom(int momshappinessLevel);
 void display_intro();
-int meet_mom( int momshappinessLevel);
+
+int display_beginning(int momshappinessLevel);
 
 int main()
 {
+	player_name();
+	
 	// if moms happiness is zero she is sad and you lose.
 	// if moms happiness goes to ten she is happy and you win.
 	int momshappinessLevel = 5;
-	cout << "\nMom's happiness starts at a " << momshappinessLevel << endl;
+	cout << player_name << "Mom's happiness starts at a " << momshappinessLevel << endl;
+	
 	display_intro();
 	
 	momshappinessLevel = meet_mom(momshappinessLevel);
 	cout << "\nMom's happiness is now at a " << momshappinessLevel << endl;
 
-	return 0;
+	momshappinessLevel = display_beginning(momshappinessLevel);
+	cout << "\nMom's happiness is now at a " << momshappinessLevel << endl;
+	
+	
 
+	return 0;
+}
+
+
+int player_name()
+{
+	cout << "\n Type your name: ";
+	string userChoice;
+	getline(cin, userChoice);
+	return 1;
 }
 
 void display_intro()
@@ -47,7 +66,7 @@ int meet_mom(int momshappinessLevel)
 	getline(cin, userChoice);
 
 	// based on what the user chose, lets influence the story
-	if (userChoice == "walk past her " || userChoice == "Walk past her.")
+	if (userChoice == "walk past her" || userChoice == "Walk past her.")
 	{
 		// if user chose call cops, then do this
 		cout << "\nWhen you try to walk past she grabs your arm looking hurt.\n";
@@ -57,11 +76,13 @@ int meet_mom(int momshappinessLevel)
 	else if (userChoice == "hug her" || userChoice == "Hug her." || userChoice == "Hug Her")
 	{
 
-		// if user chose summon dog, then do this
+		// if user choice = hug her
 
 		cout << "\n You run into Her now open arms .\n";
-		cout << "\n As all of the events of the last couple of days catch up with you , you begin to sob in her arms.  ";
+		cout << "\n As all of the events of the last couple of days catch up with you , you begin to sob in her arms.\n\n";
 		momshappinessLevel++;
+		
+	
 	}
 	else
 	{
@@ -71,4 +92,25 @@ int meet_mom(int momshappinessLevel)
 	}
 	return momshappinessLevel;
 }
-	
+
+
+
+int display_beginning(int momshappinessLevel)
+{
+
+	cout << " \nWhat's wrong? ,your mom asks as you continue to sob in her arms.";
+	cout << "\n Do you tell her what has happened? Type yes or no:";
+	string userChoice;
+	getline(cin, userChoice);
+	if (userChoice == "yes" || userChoice == "yes")
+	{
+		cout << "\nwhy didn't you tell me. Why didnt you tell me what i am!You yell at her becoming angry.";
+		cout << "\nYou have to understand i wanted to tell you but it wasnt safe. She says looking down at you.";
+		cout << "\nRemoving yourself from her arms, you square your shoulders and look directly into her eyes";
+		cout << "\nIf you think i've ever known what it feels like to be safe you are sadly mistaken Noti.";
+		cout << "\nThe iciness in your voice causes your mom to flinch away.";
+		momshappinessLevel--;
+		
+	}
+	return momshappinessLevel;
+}
