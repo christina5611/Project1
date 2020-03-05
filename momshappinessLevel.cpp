@@ -15,15 +15,15 @@ int main()
 	// if moms happiness is zero she is sad and you lose.
 	// if moms happiness goes to ten she is happy and you win.
 	int momshappinessLevel = 5;
-	cout << "\n\nMom's happiness starts at a " << momshappinessLevel << endl;
+	cout << "\n\nMom's happiness starts at a: " << momshappinessLevel << endl;
 	
 	display_intro();
 	
 	momshappinessLevel = meet_mom(momshappinessLevel);
-	cout << "\nMom's happiness is now at a " << momshappinessLevel << endl;
+	cout << "\nMom's happiness is now at a: " << momshappinessLevel << endl;
 
 	momshappinessLevel = display_beginning(momshappinessLevel);
-	cout << "\nMom's happiness is now at a " << momshappinessLevel << endl;
+	cout << "\nMom's happiness is now at a: " << momshappinessLevel << endl;
 	
 	
 
@@ -54,7 +54,7 @@ int meet_mom(int momshappinessLevel)
 
 	// give the user a choice
 
-	cout << "\nYour mom has been gone for over 9 years now. Do you give her a hug or do you walk past her as if you do not recognize her.  ";
+	cout << "\nYour mom has been gone for over 9 years now. Do you give her a hug or do you walk past her like you do not recognize her.";
 
 	cout << "\n\n Type walk past her or hug her: ";
 	// variable to hold the user's choice
